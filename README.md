@@ -2,19 +2,108 @@
 <img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
 </div>
 
-# Run and deploy your AI Studio app
+# Pigskins Bar & Grill
 
-This contains everything you need to run your app locally.
+Marketing website for Pigskins Bar & Grill, built with **React + TypeScript + Vite**.
 
-View your app in AI Studio: https://ai.studio/apps/drive/1ADbIt6td3IMNmwFUYanz390k_rkPL9bQ
+## Index
 
-## Run Locally
+- [Tech Stack](#tech-stack)
+- [Requirements](#requirements)
+- [Getting Started](#getting-started)
+- [Available Scripts](#available-scripts)
+- [Routing Notes](#routing-notes)
+- [Project Structure](#project-structure)
+- [Build & Deploy](#build--deploy)
 
-**Prerequisites:**  Node.js
+## Tech Stack
 
+- **Vite** (dev server + build)
+- **React** (TypeScript)
+- **React Router** (client-side routing)
+- **lucide-react** (icons)
+
+## Requirements
+
+- **Node.js** (LTS recommended)
+
+## Getting Started
 
 1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+
+```bash
+npm install
+```
+
+2. Start the dev server:
+
+```bash
+npm run dev
+```
+
+3. Open the app:
+
+- `http://localhost:3000`
+
+## Available Scripts
+
+- **dev**: Start Vite dev server
+
+```bash
+npm run dev
+```
+
+- **build**: Build for production
+
+```bash
+npm run build
+```
+
+- **preview**: Preview the production build locally
+
+```bash
+npm run preview
+```
+
+## Routing Notes
+
+This app uses **hash-based routing** (`HashRouter`) to work well on static hosts (no special server rewrite rules required).
+
+Routes are defined in `App.tsx`:
+
+- `/` (Home)
+- `/menu`
+- `/events`
+- `/about`
+- `/contact`
+
+## Project Structure
+
+```text
+.
+├── components/        # shared UI + layout
+├── pages/             # route pages
+├── services/          # client-side services (currently no AI service)
+├── App.tsx            # routes + app shell
+├── index.tsx          # app entry
+├── constants.tsx      # shared constants
+├── types.ts           # shared TS types
+└── vite.config.ts     # Vite config
+```
+
+## Build & Deploy
+
+1. Build:
+
+```bash
+npm run build
+```
+
+2. Deploy the `dist/` folder to your static host (Netlify, Vercel static export, Cloudflare Pages, S3, etc.).
+
+3. Optional local sanity check:
+
+```bash
+npm run preview
+```
+
